@@ -1,9 +1,9 @@
 import telebot
 
-# Botunuzu oluşturun ve bot token'ınızı ekleyin
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")
+print ("bu kod @BenYakup tarafından yazıldı)
 
-# @everyone komutunu işleyen bir işlev tanımlayın
+bot = telebot.TeleBot("6347172241:AAE5pVT6ASZuE9Kd4gicFGF4ZeayPrR1EGY")
+
 @bot.message_handler(func=lambda message: message.text.startswith("@everyone"))
 def handle_everyone(message):
     # Grup üyelerini alın
@@ -11,14 +11,10 @@ def handle_everyone(message):
     group_info = bot.get_chat(chat_id)
     group_members = group_info.get("members", [])
 
-    # Grup üyelerinin adlarını toplayın
     member_names = [member.user.first_name for member in group_members]
 
-    # Üyelerin adlarını virgülle ayırarak mesajı oluşturun
     members_message = ", ".join(member_names)
 
-    # Mesajı gönderin
     bot.reply_to(message, f"Grup üyeleri: {members_message}")
 
-# Botu çalıştırın
 bot.polling()
