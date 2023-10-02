@@ -1,6 +1,6 @@
 import telebot
 
-print("bu kod @BenYakup tarafından yazıldı)
+print("bu kod @BenYakup tarafından yazıldı")
 
 bot = telebot.TeleBot("6347172241:AAE5pVT6ASZuE9Kd4gicFGF4ZeayPrR1EGY")
 
